@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envision Media Academy | Madurai's Premier Digital Arts Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.jpg" alt="Envision Media Academy">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">[Home]</a></li>
+                <li><a href="courses.html">[Courses]</a></li>
+                <li><a href="mentors.html">[Mentors]</a></li>
+                <li><a href="register.html">[Register]</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Slideshow -->
+    <section class="hero-slideshow">
+        <!-- Slide 1: Video Production -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('https://thumbs.dreamstime.com/b/professional-video-production-setup-colorful-lighting-smoke-cinematic-featuring-camera-studio-lights-vibrant-effects-382044718.jpg');"></div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <h1>VANAKKAM MADURAI!<br>READY TO TAKE YOUR<br>CREATIVE CAREER TO<br>THE <span class="vera">VERA LEVEL?</span></h1>
+                    <p>Welcome to Envision Media Works Private Limited, Madurai's premier digital arts academy. Turn your passion into a high-paying career with our intensive, 100% practical 2-month fast-track courses. No boring lectures—just real studio experience.</p>
+                </div>
+                <div class="slide-visual">
+                    <div class="fast-track-badge">Fast-Track<br>Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Graphic Design -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://thumbs.dreamstime.com/b/neon-creative-workspace-vibrant-workspace-bathed-neon-light-multiple-computer-screens-display-glowing-neon-icons-representing-414644529.jpg');"></div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <h1>MASTER GRAPHIC<br>DESIGN & SOCIAL<br>MEDIA <span class="vera">MARKETING</span></h1>
+                    <p>Become a digital marketing powerhouse. Create viral, engaging content that modern brands desperately need. Learn Adobe Photoshop, Illustrator, Canva Pro, and Meta Ads strategy.</p>
+                </div>
+                <div class="slide-visual">
+                    <div class="fast-track-badge">Fast-Track<br>Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Fine Art -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/78c95c67908343.5b4a71d912027.png');"></div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <h1>FINE ART & DIGITAL<br>ART <span class="vera">MASTERY</span></h1>
+                    <p>Bridge the gap between traditional drawing and the infinite digital canvas. Master Procreate, Photoshop, anatomy, perspective, and character design for concept art careers.</p>
+                </div>
+                <div class="slide-visual">
+                    <div class="fast-track-badge">Fast-Track<br>Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: AI Filmmaking -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://i0.wp.com/ymcinema.com/wp-content/uploads/2023/08/The-%E2%80%98Inevitable-Future-of-AI-Filmmaking.001.jpeg?fit=1920%2C1080&ssl=1');"></div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <h1>AI FILMMAKING &<br>CONTENT <span class="vera">CREATION</span></h1>
+                    <p>The future of cinema is here. Fuse traditional filmmaking with cutting-edge AI. Learn Midjourney, Runway, prompt engineering, and AI-integrated post-production.</p>
+                </div>
+                <div class="slide-visual">
+                    <div class="fast-track-badge">Fast-Track<br>Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: 3D Animation -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://uploads.actionvfx.com/file/spina/photo/522/large_Werewolf-low.jpg');"></div>
+            <div class="slide-content">
+                <div class="slide-text">
+                    <h1>3D ANIMATION &<br>VFX <span class="vera">EXCELLENCE</span></h1>
+                    <p>Bring the impossible to life. Master Blender, Maya, Nuke, and node-based compositing. Skills demanded by blockbuster films and the global gaming industry.</p>
+                </div>
+                <div class="slide-visual">
+                    <div class="fast-track-badge">Fast-Track<br>Certified</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Indicators -->
+        <div class="slide-indicators">
+            <button class="indicator active" onclick="goToSlide(0)"></button>
+            <button class="indicator" onclick="goToSlide(1)"></button>
+            <button class="indicator" onclick="goToSlide(2)"></button>
+            <button class="indicator" onclick="goToSlide(3)"></button>
+            <button class="indicator" onclick="goToSlide(4)"></button>
+        </div>
+    </section>
+
+    <!-- Course Icons Row -->
+    <section class="course-icons-row">
+        <a href="courses.html#video" class="course-icon-card">
+            <div class="icon">🎬</div>
+            <h4>Video<br>Production</h4>
+            <span class="learn-more">Learn More</span>
+        </a>
+        <a href="courses.html#graphic" class="course-icon-card">
+            <div class="icon">🎨</div>
+            <h4>Graphic<br>Design</h4>
+            <span class="learn-more">Learn More</span>
+        </a>
+        <a href="courses.html#fineart" class="course-icon-card">
+            <div class="icon">🖌️</div>
+            <h4>Fine Art</h4>
+            <span class="learn-more">Learn More</span>
+        </a>
+        <a href="courses.html#ai" class="course-icon-card">
+            <div class="icon">🤖</div>
+            <h4>AI<br>Filmmaking</h4>
+            <span class="learn-more">Learn More</span>
+        </a>
+        <a href="courses.html#3d" class="course-icon-card">
+            <div class="icon">💥</div>
+            <h4>3D<br>Animation</h4>
+            <span class="learn-more">Learn More</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div>
+                <img src="logo.jpg" alt="Envision" style="height:40px; margin-bottom:1rem;">
+                <p style="color:var(--text-dim); font-size:0.9rem;">Madurai's premier digital arts academy. Transforming passion into profession through intensive, practical training.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="mentors.html">Mentors</a>
+                <a href="register.html">Register</a>
+            </div>
+            <div>
+                <h4>Courses</h4>
+                <a href="courses.html">Video Production</a>
+                <a href="courses.html">Graphic Design</a>
+                <a href="courses.html">Fine Art</a>
+                <a href="courses.html">AI Filmmaking</a>
+                <a href="courses.html">3D Animation</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:0.5rem;">📍 270 Kunniyur Road, Madurai</p>
+                <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:0.5rem;">📞 +91 98765 43210</p>
+                <p style="color:var(--text-dim); font-size:0.9rem;">✉️ info@envisionmedia.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Envision Media Works Private Limited. All rights reserved. | Crafted with passion in Madurai.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function goToSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            indicators[currentSlide].classList.remove('active');
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            goToSlide((currentSlide + 1) % totalSlides);
+        }
+
+        // Auto-advance every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>

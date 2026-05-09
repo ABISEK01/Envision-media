@@ -1,0 +1,10 @@
+slide1: https://thumbs.dreamstime.com/b/professional-video-production-setup-colorful-lighting-smoke-cinematic-featuring-camera-studio-lights-vibrant-effects-382044718.jpg
+slide2: https://thumbs.dreamstime.com/b/neon-creative-workspace-vibrant-workspace-bathed-neon-light-multiple-computer-screens-display-glowing-neon-icons-representing-414644529.jpg
+slide3: https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/78c95c67908343.5b4a71d912027.png
+slide4: https://i0.wp.com/ymcinema.com/wp-content/uploads/2023/08/The-%E2%80%98Inevitable-Future-of-AI-Filmmaking.001.jpeg?fit=1920%2C1080&ssl=1
+slide5: https://uploads.actionvfx.com/file/spina/photo/522/large_Werewolf-low.jpg
+course_video: https://thumbs.dreamstime.com/b/behind-scenes-making-movie-tv-commercial-camera-video-production-film-crew-b-roll-team-studio-set-dark-background-154741993.jpg
+course_graphic: https://www.shutterstock.com/image-vector/like-comment-share-social-media-260nw-2397810777.jpg
+course_fineart: https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/78c95c67908343.5b4a71d912027.png
+course_ai: https://i0.wp.com/ymcinema.com/wp-content/uploads/2023/08/The-%E2%80%98Inevitable-Future-of-AI-Filmmaking.001.jpeg?fit=1920%2C1080&ssl=1
+course_3d: https://media.sketchfab.com/models/d5482458cbc443a292dd0fffc6e8ebad/thumbnails/9c5a357704174d3885486afce637289a/7a2e1a68b8a44078827148a31d8f33da.jpeg
