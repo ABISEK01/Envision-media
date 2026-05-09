@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Envision Media Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            position: relative;
+        }
+
+        .login-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1000px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .login-visual {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-green), var(--accent-blue));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.03) 10px,
+                rgba(255,255,255,0.03) 20px
+            );
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .login-visual-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .login-visual .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .login-visual h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-visual p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .login-form-section {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-form-section h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .login-form-section > p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .tab-switch {
+            display: flex;
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 0.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active {
+            background: var(--accent-green);
+            color: var(--primary);
+        }
+
+        .login-form {
+            display: none;
+        }
+
+        .login-form.active {
+            display: block;
+        }
+
+        .forgot-link {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .divider span {
+            padding: 0 1rem;
+        }
+
+        .social-login {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            padding: 0.8rem;
+            border: 1px solid var(--border);
+            background: var(--secondary);
+            color: var(--text-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .social-btn:hover {
+            border-color: var(--accent-green);
+            background: rgba(126,211,33,0.1);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .signup-link a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .login-container { grid-template-columns: 1fr; }
+            .login-visual { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◉</div>
+                <div>ENVISION<br><small style="font-size:0.6rem; color:var(--text-secondary); letter-spacing:2px;">MEDIA ACADEMY</small></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">Home</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="courses.html" class="">Courses</a></li>
+<li><a href="admission.html" class="">Admission</a></li>
+<li><a href="login.html" class="active">Login</a></li>
+
+            </ul>
+            <button class="menu-toggle" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">☰</button>
+        </div>
+    </nav>
+    
+
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-visual">
+                <div class="login-visual-content">
+                    <div class="logo-icon">◉</div>
+                    <h2>Welcome Back!</h2>
+                    <p>Access your course materials, assignments, and connect with mentors. Your creative journey continues here.</p>
+
+                    <div style="margin-top:3rem; padding:1.5rem; background:rgba(255,255,255,0.1); border-radius:16px; backdrop-filter:blur(10px);">
+                        <p style="font-size:0.9rem; margin-bottom:0.5rem;">🎓 Student Portal Features:</p>
+                        <ul style="list-style:none; text-align:left; font-size:0.85rem; opacity:0.9;">
+                            <li style="margin-bottom:0.3rem;">✓ Course videos & resources</li>
+                            <li style="margin-bottom:0.3rem;">✓ Project submissions</li>
+                            <li style="margin-bottom:0.3rem;">✓ Mentor feedback</li>
+                            <li style="margin-bottom:0.3rem;">✓ Community forums</li>
+                            <li>✓ Job board access</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-form-section">
+                <h2>Student Login</h2>
+                <p>Sign in to your Envision account</p>
+
+                <div class="tab-switch">
+                    <button class="tab-btn active" onclick="switchTab('student')">Student</button>
+                    <button class="tab-btn" onclick="switchTab('admin')">Admin</button>
+                </div>
+
+                <!-- Student Login Form -->
+                <form id="student-form" class="login-form active" action="#" method="POST">
+                    <div class="form-group">
+                        <label>Email or Student ID</label>
+                        <input type="text" class="form-control" name="email" placeholder="Enter email or student ID" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                        <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-secondary); font-size:0.9rem;">
+                            <input type="checkbox" style="width:auto;">
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Sign In</button>
+                </form>
+
+                <!-- Admin Login Form -->
+                <form id="admin-form" class="login-form" action="#" method="POST">
+                    <div class="form-group">
+                        <label>Admin Email</label>
+                        <input type="email" class="form-control" name="admin_email" placeholder="admin@envisionmedia.in" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="admin_password" placeholder="Enter admin password" required>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+                        <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; color:var(--text-secondary); font-size:0.9rem;">
+                            <input type="checkbox" style="width:auto;">
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Admin Sign In</button>
+                </form>
+
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <span style="font-size:1.2rem;">🔍</span> Google
+                    </button>
+                    <button class="social-btn">
+                        <span style="font-size:1.2rem;">💼</span> LinkedIn
+                    </button>
+                </div>
+
+                <div class="signup-link">
+                    Not a student yet? <a href="admission.html">Apply for admission</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.login-form').forEach(form => form.classList.remove('active'));
+
+            if (tab === 'student') {
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('student-form').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.getElementById('admin-form').classList.add('active');
+            }
+        }
+
+        // Particle animation
+        const particlesContainer = document.querySelector('.particles');
+        if (particlesContainer) {
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+    </script>
+</body>
+</html>
