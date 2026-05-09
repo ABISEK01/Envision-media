@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Courses | Envision Media Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .courses-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(231,76,60,0.05), rgba(126,211,33,0.05));
+        }
+
+        .courses-hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .courses-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-detail {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all 0.3s;
+        }
+
+        .course-detail:hover {
+            border-color: var(--accent-green);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .course-detail:nth-child(even) {
+            direction: rtl;
+        }
+
+        .course-detail:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .course-visual {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .course-visual.video { background: linear-gradient(135deg, #1a1a2e, #0f3460); }
+        .course-visual.graphic { background: linear-gradient(135deg, #1a1a2e, #533483); }
+        .course-visual.fineart { background: linear-gradient(135deg, #1a1a2e, #7b2cbf); }
+        .course-visual.ai { background: linear-gradient(135deg, #1a1a2e, #c0392b); }
+        .course-visual.vfx { background: linear-gradient(135deg, #1a1a2e, #27ae60); }
+
+        .course-icon-large {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            z-index: 1;
+        }
+
+        .course-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .course-tag {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .tag-video { background: rgba(52,152,219,0.2); color: var(--accent-blue); }
+        .tag-graphic { background: rgba(155,89,182,0.2); color: #9b59b6; }
+        .tag-fineart { background: rgba(241,196,15,0.2); color: #f1c40f; }
+        .tag-ai { background: rgba(231,76,60,0.2); color: var(--accent-red); }
+        .tag-vfx { background: rgba(39,174,96,0.2); color: #27ae60; }
+
+        .course-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .learn-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learn-list li::before {
+            content: '✓';
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .career-box {
+            background: rgba(126,211,33,0.1);
+            border-left: 3px solid var(--accent-green);
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .career-box h4 {
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .career-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .tools {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tool-tag {
+            background: var(--secondary);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .course-detail { grid-template-columns: 1fr; }
+            .course-detail:nth-child(even) { direction: ltr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◉</div>
+                <div>ENVISION<br><small style="font-size:0.6rem; color:var(--text-secondary); letter-spacing:2px;">MEDIA ACADEMY</small></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">Home</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="courses.html" class="active">Courses</a></li>
+<li><a href="admission.html" class="">Admission</a></li>
+<li><a href="login.html" class="">Login</a></li>
+
+            </ul>
+            <button class="menu-toggle" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">☰</button>
+        </div>
+    </nav>
+    
+
+    <!-- Hero -->
+    <section class="courses-hero">
+        <div class="courses-hero-content">
+            <h1>OUR <span style="color:var(--accent-green);">INTENSIVE COURSES</span></h1>
+            <p style="color:var(--text-secondary); max-width:700px; margin:0 auto;">Five specialized programs designed to take you from beginner to industry-ready in just 2 months. Every course is built around real-world projects and current industry demands.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <!-- Course 1: Video Production -->
+        <div id="video" class="course-detail">
+            <div class="course-visual video">
+                <div class="course-icon-large">🎬</div>
+                <h3 style="z-index:1;">Professional Video</h3>
+                <p style="color:var(--text-secondary); z-index:1;">Production & Editing</p>
+            </div>
+            <div class="course-info">
+                <span class="course-tag tag-video">🎬 VIDEO PRODUCTION</span>
+                <h2>Professional Video Production & Editing</h2>
+                <p>Master the art of visual storytelling. In just 2 months, you will learn the complete pipeline from script to screen. Work with professional cameras, lighting setups, and editing suites.</p>
+
+                <h4 style="color:var(--accent-green); margin-bottom:0.5rem;">What You Will Learn:</h4>
+                <ul class="learn-list">
+                    <li>Camera operation and cinematography fundamentals</li>
+                    <li>Cinematic lighting techniques for any budget</li>
+                    <li>Professional audio design and recording</li>
+                    <li>Advanced non-linear editing in Adobe Premiere Pro</li>
+                    <li>Color grading and correction in DaVinci Resolve</li>
+                    <li>Multi-camera editing and workflow optimization</li>
+                </ul>
+
+                <div class="career-box">
+                    <h4>🚀 Career Opportunities</h4>
+                    <p>Professional Video Editor, Corporate Filmmaker, YouTube Content Creator, Wedding Cinematographer, Documentary Editor</p>
+                </div>
+
+                <div class="tools">
+                    <span class="tool-tag">Premiere Pro</span>
+                    <span class="tool-tag">DaVinci Resolve</span>
+                    <span class="tool-tag">After Effects</span>
+                    <span class="tool-tag">Audition</span>
+                </div>
+
+                <a href="admission.html?course=video" class="btn btn-primary">Enroll in This Course</a>
+            </div>
+        </div>
+
+        <!-- Course 2: Graphic Design -->
+        <div id="graphic" class="course-detail">
+            <div class="course-visual graphic">
+                <div class="course-icon-large">🎨</div>
+                <h3 style="z-index:1;">Graphic Design</h3>
+                <p style="color:var(--text-secondary); z-index:1;">& Social Media</p>
+            </div>
+            <div class="course-info">
+                <span class="course-tag tag-graphic">🎨 GRAPHIC DESIGN</span>
+                <h2>Graphic Design & Social Media</h2>
+                <p>Become a digital marketing powerhouse. We teach you to create viral, engaging content that modern brands desperately need. From brand identity to paid ad campaigns.</p>
+
+                <h4 style="color:var(--accent-green); margin-bottom:0.5rem;">What You Will Learn:</h4>
+                <ul class="learn-list">
+                    <li>Brand identity creation and visual systems</li>
+                    <li>Adobe Photoshop & Illustrator mastery</li>
+                    <li>Rapid content design using Canva Pro</li>
+                    <li>Meta Ads strategy and campaign design</li>
+                    <li>Real-time "moment marketing" techniques</li>
+                    <li>Social media analytics and optimization</li>
+                </ul>
+
+                <div class="career-box">
+                    <h4>🚀 Career Opportunities</h4>
+                    <p>Social Media Manager, Brand Architect, Digital Marketing Executive, Content Strategist, Freelance Graphic Designer</p>
+                </div>
+
+                <div class="tools">
+                    <span class="tool-tag">Photoshop</span>
+                    <span class="tool-tag">Illustrator</span>
+                    <span class="tool-tag">Canva Pro</span>
+                    <span class="tool-tag">Figma</span>
+                    <span class="tool-tag">Meta Business</span>
+                </div>
+
+                <a href="admission.html?course=graphic" class="btn btn-primary">Enroll in This Course</a>
+            </div>
+        </div>
+
+        <!-- Course 3: Fine Art & Digital Art -->
+        <div id="fineart" class="course-detail">
+            <div class="course-visual fineart">
+                <div class="course-icon-large">🖌️</div>
+                <h3 style="z-index:1;">Fine Art &</h3>
+                <p style="color:var(--text-secondary); z-index:1;">Digital Art</p>
+            </div>
+            <div class="course-info">
+                <span class="course-tag tag-fineart">🖌️ FINE ART</span>
+                <h2>Fine Art & Digital Art</h2>
+                <p>Bridge the gap between traditional drawing and the infinite digital canvas. Perfect for aspiring illustrators and concept artists who want to master both worlds.</p>
+
+                <h4 style="color:var(--accent-green); margin-bottom:0.5rem;">What You Will Learn:</h4>
+                <ul class="learn-list">
+                    <li>Digital painting workflows in Procreate</li>
+                    <li>Advanced anatomy and figure drawing</li>
+                    <li>Perspective and environmental design</li>
+                    <li>Cinematic lighting for dramatic compositions</li>
+                    <li>Character design from concept to final render</li>
+                    <li>Portfolio building for art directors</li>
+                </ul>
+
+                <div class="career-box">
+                    <h4>🚀 Career Opportunities</h4>
+                    <p>Concept Artist, Digital Illustrator, Storyboard Artist, Comic Book Artist, NFT Artist, Game Asset Designer</p>
+                </div>
+
+                <div class="tools">
+                    <span class="tool-tag">Procreate</span>
+                    <span class="tool-tag">Photoshop</span>
+                    <span class="tool-tag">Clip Studio</span>
+                    <span class="tool-tag">Blender</span>
+                </div>
+
+                <a href="admission.html?course=fineart" class="btn btn-primary">Enroll in This Course</a>
+            </div>
+        </div>
+
+        <!-- Course 4: AI Filmmaking -->
+        <div id="ai" class="course-detail">
+            <div class="course-visual ai">
+                <div class="course-icon-large">🤖</div>
+                <h3 style="z-index:1;">AI Filmmaking</h3>
+                <p style="color:var(--text-secondary); z-index:1;">& Content Creation</p>
+            </div>
+            <div class="course-info">
+                <span class="course-tag tag-ai">🤖 AI FILMMAKING</span>
+                <h2>AI Filmmaking & Content Creation</h2>
+                <p>The future of cinema is here. Learn to fuse traditional filmmaking techniques with the cutting-edge power of Artificial Intelligence. Scale your creative output infinitely.</p>
+
+                <h4 style="color:var(--accent-green); margin-bottom:0.5rem;">What You Will Learn:</h4>
+                <ul class="learn-list">
+                    <li>Advanced prompt engineering for visual media</li>
+                    <li>Text-to-Video (T2V) generation with Midjourney</li>
+                    <li>Runway ML for motion and video synthesis</li>
+                    <li>Synthetic audio and AI voice generation</li>
+                    <li>AI-integrated post-production workflows</li>
+                    <li>Ethical AI usage and copyright frameworks</li>
+                </ul>
+
+                <div class="career-box">
+                    <h4>🚀 Career Opportunities</h4>
+                    <p>AI Content Creator, Pre-visualization Artist, Digital Director, Prompt Engineer, Creative Technologist</p>
+                </div>
+
+                <div class="tools">
+                    <span class="tool-tag">Midjourney</span>
+                    <span class="tool-tag">Runway ML</span>
+                    <span class="tool-tag">Stable Diffusion</span>
+                    <span class="tool-tag">ElevenLabs</span>
+                    <span class="tool-tag">ChatGPT</span>
+                </div>
+
+                <a href="admission.html?course=ai" class="btn btn-primary">Enroll in This Course</a>
+            </div>
+        </div>
+
+        <!-- Course 5: 3D Animation & VFX -->
+        <div id="3d" class="course-detail">
+            <div class="course-visual vfx">
+                <div class="course-icon-large">💥</div>
+                <h3 style="z-index:1;">3D Animation</h3>
+                <p style="color:var(--text-secondary); z-index:1;">& VFX</p>
+            </div>
+            <div class="course-info">
+                <span class="course-tag tag-vfx">💥 3D & VFX</span>
+                <h2>3D Animation & VFX</h2>
+                <p>Bring the impossible to life. This module equips you with the highly technical skills demanded by blockbuster films and the global gaming industry.</p>
+
+                <h4 style="color:var(--accent-green); margin-bottom:0.5rem;">What You Will Learn:</h4>
+                <ul class="learn-list">
+                    <li>3D modeling, texturing, and rendering</li>
+                    <li>Blender and Maya mastery for production</li>
+                    <li>Node-based compositing fundamentals</li>
+                    <li>Rotoscoping techniques in Nuke</li>
+                    <li>Matchmoving and camera tracking</li>
+                    <li>Particle systems and dynamics simulation</li>
+                </ul>
+
+                <div class="career-box">
+                    <h4>🚀 Career Opportunities</h4>
+                    <p>3D Generalist, VFX Compositor, Motion Graphics Artist, Game Environment Artist, Technical Director</p>
+                </div>
+
+                <div class="tools">
+                    <span class="tool-tag">Blender</span>
+                    <span class="tool-tag">Maya</span>
+                    <span class="tool-tag">Nuke</span>
+                    <span class="tool-tag">After Effects</span>
+                    <span class="tool-tag">Substance Painter</span>
+                </div>
+
+                <a href="admission.html?course=3d" class="btn btn-primary">Enroll in This Course</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section" style="background:var(--secondary); border-radius:30px; margin:2rem auto;">
+        <h2 class="section-title">COURSE <span class="highlight">COMPARISON</span></h2>
+        <p class="section-subtitle">Find the perfect fit for your creative goals</p>
+
+        <div style="overflow-x:auto; margin-top:3rem;">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--accent-green);">
+                        <th style="padding:1rem; text-align:left; color:var(--accent-green);">Feature</th>
+                        <th style="padding:1rem; text-align:center;">🎬 Video</th>
+                        <th style="padding:1rem; text-align:center;">🎨 Graphic</th>
+                        <th style="padding:1rem; text-align:center;">🖌️ Fine Art</th>
+                        <th style="padding:1rem; text-align:center;">🤖 AI Film</th>
+                        <th style="padding:1rem; text-align:center;">💥 3D/VFX</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:1rem; color:var(--text-secondary);">Duration</td>
+                        <td style="padding:1rem; text-align:center;">2 Months</td>
+                        <td style="padding:1rem; text-align:center;">2 Months</td>
+                        <td style="padding:1rem; text-align:center;">2 Months</td>
+                        <td style="padding:1rem; text-align:center;">2 Months</td>
+                        <td style="padding:1rem; text-align:center;">2 Months</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:1rem; color:var(--text-secondary);">Class Size</td>
+                        <td style="padding:1rem; text-align:center;">15 max</td>
+                        <td style="padding:1rem; text-align:center;">15 max</td>
+                        <td style="padding:1rem; text-align:center;">12 max</td>
+                        <td style="padding:1rem; text-align:center;">12 max</td>
+                        <td style="padding:1rem; text-align:center;">10 max</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:1rem; color:var(--text-secondary);">Projects</td>
+                        <td style="padding:1rem; text-align:center;">8+</td>
+                        <td style="padding:1rem; text-align:center;">10+</td>
+                        <td style="padding:1rem; text-align:center;">6+</td>
+                        <td style="padding:1rem; text-align:center;">8+</td>
+                        <td style="padding:1rem; text-align:center;">5+</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:1rem; color:var(--text-secondary);">Software</td>
+                        <td style="padding:1rem; text-align:center;">4 tools</td>
+                        <td style="padding:1rem; text-align:center;">5 tools</td>
+                        <td style="padding:1rem; text-align:center;">4 tools</td>
+                        <td style="padding:1rem; text-align:center;">5 tools</td>
+                        <td style="padding:1rem; text-align:center;">5 tools</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:1rem; color:var(--text-secondary);">Placement Support</td>
+                        <td style="padding:1rem; text-align:center; color:var(--accent-green);">✓</td>
+                        <td style="padding:1rem; text-align:center; color:var(--accent-green);">✓</td>
+                        <td style="padding:1rem; text-align:center; color:var(--accent-green);">✓</td>
+                        <td style="padding:1rem; text-align:center; color:var(--accent-green);">✓</td>
+                        <td style="padding:1rem; text-align:center; color:var(--accent-green);">✓</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="text-align:center;">
+        <h2 class="section-title">STILL <span class="highlight">CONFUSED?</span></h2>
+        <p class="section-subtitle">Talk to our counselors and find your perfect creative path</p>
+        <a href="admission.html" class="btn btn-glow" style="font-size:1.2rem; padding:1rem 3rem; margin-top:2rem;">Get Free Career Guidance</a>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="logo" style="margin-bottom:1rem;">
+                    <div class="logo-icon">◉</div>
+                    <div>ENVISION<br><small style="font-size:0.6rem; color:var(--text-secondary); letter-spacing:2px;">MEDIA ACADEMY</small></div>
+                </div>
+                <p style="color:var(--text-secondary); line-height:1.8;">
+                    Madurai's premier digital arts academy. Transforming passion into profession through intensive, practical training.
+                </p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="courses.html">Courses</a>
+                <a href="admission.html">Admission</a>
+            </div>
+            <div>
+                <h3>Courses</h3>
+                <a href="courses.html">Video Production</a>
+                <a href="courses.html">Graphic Design</a>
+                <a href="courses.html">Fine Art & Digital Art</a>
+                <a href="courses.html">AI Filmmaking</a>
+                <a href="courses.html">3D Animation & VFX</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p style="color:var(--text-secondary); margin-bottom:0.5rem;">📍 270 Kunniyur Road, Madurai</p>
+                <p style="color:var(--text-secondary); margin-bottom:0.5rem;">📞 +91 98765 43210</p>
+                <p style="color:var(--text-secondary);">✉️ info@envisionmedia.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Envision Media Works Private Limited. All rights reserved. | Crafted with passion in Madurai.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

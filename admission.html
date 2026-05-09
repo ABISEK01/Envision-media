@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission | Envision Media Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admission-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(231,76,60,0.1), rgba(126,211,33,0.1), rgba(52,152,219,0.1));
+        }
+
+        .admission-hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admission-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .admission-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admission-info {
+            padding-right: 2rem;
+        }
+
+        .admission-info h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-green);
+        }
+
+        .admission-info p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.3rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .form-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--border);
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-container p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        .info-box {
+            background: rgba(126,211,33,0.1);
+            border: 1px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .info-box h4 {
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .admission-container { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .admission-info { padding-right: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">◉</div>
+                <div>ENVISION<br><small style="font-size:0.6rem; color:var(--text-secondary); letter-spacing:2px;">MEDIA ACADEMY</small></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="">Home</a></li>
+<li><a href="about.html" class="">About</a></li>
+<li><a href="courses.html" class="">Courses</a></li>
+<li><a href="admission.html" class="active">Admission</a></li>
+<li><a href="login.html" class="">Login</a></li>
+
+            </ul>
+            <button class="menu-toggle" style="display:none; background:none; border:none; color:white; font-size:1.5rem; cursor:pointer;">☰</button>
+        </div>
+    </nav>
+    
+
+    <!-- Hero -->
+    <section class="admission-hero">
+        <div class="admission-hero-content">
+            <h1>JOIN THE <span style="color:var(--accent-green);">VERA LEVEL!</span></h1>
+            <p style="color:var(--text-secondary); max-width:700px; margin:0 auto;">Enroll now and transform your passion into a high-paying creative career. Our admissions team reviews every application personally.</p>
+        </div>
+    </section>
+
+    <div class="admission-container">
+        <!-- Left: Info -->
+        <div class="admission-info">
+            <h2>ADMISSION PROCESS</h2>
+            <p>Getting into Envision is simple and straightforward. We believe in merit and passion, not complicated entrance exams.</p>
+
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Submit Application</h4>
+                    <p>Fill out the form with your details and select your preferred course. No lengthy paperwork required.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Counseling Call</h4>
+                    <p>Our team will call you within 24 hours to understand your goals and recommend the best course fit.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Skill Assessment</h4>
+                    <p>A brief 15-minute creative aptitude chat (not a test!) to understand your current level and customize your learning path.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>Confirm Seat</h4>
+                    <p>Pay the registration fee to lock your seat. Limited to 15 students per batch for personalized attention.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📅 Next Batch Starting</h4>
+                <p>June 15, 2026 — Only 8 seats remaining for this batch. Early applicants get priority course selection and a free creative toolkit worth ₹5,000.</p>
+            </div>
+
+            <div class="info-box" style="border-color:var(--accent-blue);">
+                <h4 style="color:var(--accent-blue);">💰 Fee Structure</h4>
+                <p>Total Course Fee: ₹45,000 per course<br>Registration: ₹5,000 (adjustable in fee)<br>EMI options available via our banking partners. No hidden charges.</p>
+            </div>
+
+            <h2 style="margin-top:3rem; margin-bottom:1rem;">FREQUENTLY ASKED QUESTIONS</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Do I need prior experience?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    No prior experience required! Our courses are designed for complete beginners. We start from the fundamentals and build up to professional-level work.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    What is the class schedule?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Classes run Monday to Saturday, 10 AM to 4 PM with a 1-hour lunch break. We also offer weekend batches for working professionals (Saturday-Sunday, 9 AM to 6 PM).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Do you provide certificates?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! Every graduate receives an industry-recognized certificate from Envision Media Works. More importantly, you'll leave with a professional portfolio that speaks louder than any certificate.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Is there placement support?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely. We have partnerships with studios in Chennai, Bangalore, Hyderabad, and Dubai. Our dedicated placement cell helps with resume building, portfolio reviews, and direct interviews.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    Can I pay in installments?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We offer 3-month EMI options through our partner banks. You can also pay in two installments: 50% at admission and 50% within 30 days.
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="form-container">
+            <h2>ENROLL NOW!</h2>
+            <p>Fill in your details and we'll get back to you within 24 hours</p>
+
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" class="form-control" name="firstname" placeholder="Enter first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" class="form-control" name="lastname" placeholder="Enter last name" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" class="form-control" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" class="form-control" name="phone" placeholder="+91 98765 43210" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Course *</label>
+                    <select class="form-control" name="course" required>
+                        <option value="">Choose your course...</option>
+                        <option value="video">🎬 Professional Video Production & Editing</option>
+                        <option value="graphic">🎨 Graphic Design & Social Media</option>
+                        <option value="fineart">🖌️ Fine Art & Digital Art</option>
+                        <option value="ai">🤖 AI Filmmaking & Content Creation</option>
+                        <option value="3d">💥 3D Animation & VFX</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Preferred Batch *</label>
+                    <select class="form-control" name="batch" required>
+                        <option value="">Select batch timing...</option>
+                        <option value="weekday">Weekday Batch (Mon-Sat, 10AM-4PM)</option>
+                        <option value="weekend">Weekend Batch (Sat-Sun, 9AM-6PM)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Your Creative Background</label>
+                    <textarea class="form-control" name="background" rows="3" placeholder="Tell us about any prior experience or why you're passionate about this field..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                        <input type="checkbox" required style="width:auto;">
+                        <span style="font-size:0.9rem; color:var(--text-secondary);">I agree to receive calls and messages from Envision Media Academy regarding my application.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-glow submit-btn">Apply Now!</button>
+            </form>
+
+            <div style="text-align:center; margin-top:1.5rem;">
+                <p style="color:var(--text-secondary); font-size:0.9rem;">Or call us directly:</p>
+                <a href="tel:+919876543210" style="color:var(--accent-green); font-size:1.2rem; font-weight:700; text-decoration:none;">📞 +91 98765 43210</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Section -->
+    <section class="section" style="background:var(--secondary); border-radius:30px; margin:2rem auto; text-align:center;">
+        <h2 class="section-title">VISIT <span class="highlight">OUR CAMPUS</span></h2>
+        <p class="section-subtitle">Experience the creative energy in person</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:3rem; text-align:left;">
+            <div>
+                <div style="background:linear-gradient(135deg, #1a1a2e, #16213e); border-radius:16px; min-height:300px; display:flex; align-items:center; justify-content:center; border:2px solid var(--border);">
+                    <div style="text-align:center;">
+                        <div style="font-size:4rem; margin-bottom:1rem;">🏢</div>
+                        <p style="color:var(--accent-green); font-weight:700;">Envision Media Works</p>
+                        <p style="color:var(--text-secondary);">Madurai Campus</p>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex; flex-direction:column; justify-content:center;">
+                <h3 style="color:var(--accent-green); margin-bottom:1rem;">📍 Address</h3>
+                <p style="color:var(--text-secondary); margin-bottom:2rem; line-height:1.8;">
+                    270 Kunniyur Road,<br>
+                    Near Meenakshi Temple Circle,<br>
+                    Madurai - 625001,<br>
+                    Tamil Nadu, India
+                </p>
+
+                <h3 style="color:var(--accent-green); margin-bottom:1rem;">📞 Contact</h3>
+                <p style="color:var(--text-secondary); margin-bottom:2rem; line-height:1.8;">
+                    Phone: +91 98765 43210<br>
+                    WhatsApp: +91 98765 43211<br>
+                    Email: admissions@envisionmedia.in
+                </p>
+
+                <h3 style="color:var(--accent-green); margin-bottom:1rem;">🕐 Office Hours</h3>
+                <p style="color:var(--text-secondary); line-height:1.8;">
+                    Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                    Sunday: Closed (But we're always online!)
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <div class="logo" style="margin-bottom:1rem;">
+                    <div class="logo-icon">◉</div>
+                    <div>ENVISION<br><small style="font-size:0.6rem; color:var(--text-secondary); letter-spacing:2px;">MEDIA ACADEMY</small></div>
+                </div>
+                <p style="color:var(--text-secondary); line-height:1.8;">
+                    Madurai's premier digital arts academy. Transforming passion into profession through intensive, practical training.
+                </p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="courses.html">Courses</a>
+                <a href="admission.html">Admission</a>
+            </div>
+            <div>
+                <h3>Courses</h3>
+                <a href="courses.html">Video Production</a>
+                <a href="courses.html">Graphic Design</a>
+                <a href="courses.html">Fine Art & Digital Art</a>
+                <a href="courses.html">AI Filmmaking</a>
+                <a href="courses.html">3D Animation & VFX</a>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p style="color:var(--text-secondary); margin-bottom:0.5rem;">📍 270 Kunniyur Road, Madurai</p>
+                <p style="color:var(--text-secondary); margin-bottom:0.5rem;">📞 +91 98765 43210</p>
+                <p style="color:var(--text-secondary);">✉️ info@envisionmedia.in</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Envision Media Works Private Limited. All rights reserved. | Crafted with passion in Madurai.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
